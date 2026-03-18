@@ -77,6 +77,66 @@
   </tbody>
 </table>
 
+<form action="procesar_registro.php" method="post" novalidate>
+  <!-- Nombre completo (required) -->
+  <label for="nombre">Nombre completo:</label>
+  <input 
+    type="text" 
+    id="nombre" 
+    name="nombre" 
+    required 
+    placeholder="Tu nombre completo"
+  >
+
+  <!-- Correo institucional UES (required + pattern) -->
+  <label for="correo">Correo institucional UES:</label>
+  <input 
+    type="email" 
+    id="correo" 
+    name="correo" 
+    required 
+    pattern="([0-9]{8}|[0-9]{11})@ues\.mx" 
+    placeholder="12345678@ues.mx"
+    title="Debe ser un correo institucional UES con 8 u 11 dígitos seguido de @ues.mx"
+  >
+
+  <!-- Tipo de asistencia ISW (select con 2 opciones) -->
+  <label for="tipo_asistencia">Tipo de asistencia (solo ISW):</label>
+  <select id="tipo_asistencia" name="tipo_asistencia" required>
+    <option value="">Selecciona una opción</option>
+    <option value="alumno">Alumno (Ing. en Software)</option>
+    <option value="docente">Docente (Ing. en Software)</option>
+  </select>
+
+  <!-- Evento principal (radio, required) -->
+  <fieldset>
+    <legend>Evento principal:</legend>
+    <input 
+      type="radio" 
+      id="evento1" 
+      name="evento_principal" 
+      value="conferencia" 
+      required
+    >
+    <label for="evento1">Conferencia</label>
+
+    <input 
+      type="radio" 
+      id="evento2" 
+      name="evento_principal" 
+      value="taller"
+    >
+    <label for="evento2">Taller</label>
+  </fieldset>
+
+  <!-- Comentarios (opcional) -->
+  <label for="comentarios">Comentarios (opcional):</label>
+  <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe aquí tus comentarios"></textarea>
+
+  <!-- Botón de envío -->
+  <button type="submit">Enviar registro</button>
+</form>
+
 
   <footer>
     <p>© 2026 Evento Anual. Todos los derechos reservados.</p>
