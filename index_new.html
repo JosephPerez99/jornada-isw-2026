@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jornada de Ingeniero en Software 2026</title>
+</head>
+<body>
+    <header>
+        <h1>Jornada de Ingeniero en Software 2026</h1>
+        <p><time datetime="2026-04-27">Lunes 27 de abril de 2026</time></p>
+        <img src="img/Logo-UES.png" alt="Logo UES">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="programa.html">Programa</a></li>
+                <li><a href="index.html#registro">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="agenda-rapida">
+            <h2>Agenda rápida</h2>
+            <ul>
+                <li>09:00 - Registro y bienvenida</li>
+                <li>10:00 - Conferencia inaugural</li>
+                <li>11:30 - Pausa para café</li>
+                <li>12:00 - Talleres simultáneos</li>
+                <li>14:00 - Almuerzo</li>
+                <li>15:00 - Panel de discusión</li>
+                <li>17:00 - Clausura</li>
+            </ul>
+        </section>
+        <section id="registro">
+            <h2>Registro al evento</h2>
+            <form action="procesar_registro.php" method="post">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Tu nombre completo">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="10 dígitos">
+                <label for="asistencia">¿Asistirás en persona?</label>
+                <select id="asistencia" name="asistencia" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+                <button type="submit">Enviar registro</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Universidad de El Salvador</p>
+    </footer>
+</body>
+</html>
