@@ -31,8 +31,8 @@
                 <li>17:00 - Clausura</li>
             </ul>
         </section>
-        <section id="registro">
-            <h2>Registro al evento</h2>
+        <section id="registro-general">
+            <h2>Registro General al Evento</h2>
             <form action="procesar_registro.php" method="post">
                 <label for="nombre">Nombre completo:</label>
                 <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Tu nombre completo">
@@ -49,6 +49,71 @@
                 <button type="submit">Enviar registro</button>
             </form>
         </section>
+
+        <section id="registro-isw">
+            <h2>Registro Específico Ingeniería en Software</h2>
+            <form action="procesar_registro.php" method="post" novalidate>
+                <!-- Nombre completo (required) -->
+                <label for="nombre_isw">Nombre completo:</label>
+                <input 
+                  type="text" 
+                  id="nombre_isw" 
+                  name="nombre" 
+                  required 
+                  placeholder="Tu nombre completo"
+                >
+
+                <!-- Correo institucional UES (required + pattern) -->
+                <label for="correo_ues">Correo institucional UES:</label>
+                <input 
+                  type="email" 
+                  id="correo_ues" 
+                  name="correo" 
+                  required 
+                  pattern="([0-9]{8}|[0-9]{11})@ues\.mx" 
+                  placeholder="12345678@ues.mx"
+                  title="Debe ser un correo institucional UES con 8 u 11 dígitos seguido de @ues.mx"
+                >
+
+                <!-- Tipo de asistencia ISW (select con 2 opciones) -->
+                <label for="tipo_asistencia_isw">Tipo de asistencia:</label>
+                <select id="tipo_asistencia_isw" name="tipo_asistencia" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="alumno">Alumno (Ing. en Software)</option>
+                  <option value="docente">Docente (Ing. en Software)</option>
+                </select>
+
+                <!-- Evento principal (radio, required) -->
+                <fieldset>
+                  <legend>Evento principal:</legend>
+                  <input 
+                    type="radio" 
+                    id="evento_isw_1" 
+                    name="evento_principal" 
+                    value="conferencia" 
+                    required
+                  >
+                  <label for="evento_isw_1">Conferencia</label>
+
+                  <input 
+                    type="radio" 
+                    id="evento_isw_2" 
+                    name="evento_principal" 
+                    value="taller"
+                    required
+                  >
+                  <label for="evento_isw_2">Taller</label>
+                </fieldset>
+
+                <!-- Comentarios (opcional) -->
+                <label for="comentarios_isw">Comentarios (opcional):</label>
+                <textarea id="comentarios_isw" name="comentarios" rows="4" placeholder="Escribe aquí tus comentarios"></textarea>
+
+                <!-- Botón de envío -->
+                <button type="submit">Enviar registro</button>
+            </form>
+        </section>
+
     </main>
     <footer>
         <p>© 2026 Universidad de El Salvador</p>
